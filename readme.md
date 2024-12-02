@@ -1,5 +1,5 @@
 ## Description
-This is simple test work
+This is simple test work based on Airflow, Postgersql and Docker 
 
 ## Installation
 * First clone the repo
