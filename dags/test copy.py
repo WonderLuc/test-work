@@ -17,7 +17,7 @@ def simple_etl_decorated():
             peoples.append(profile)
         return peoples
     
-    @task(task_id="clearing")
+    @task(task_id="transforming")
     def clear_data(peoples):
         for i in range(len(peoples)):
             people = peoples[i]
@@ -30,7 +30,7 @@ def simple_etl_decorated():
             peoples[i] = (fist_name, last_name, post_code, birthday, email)
         return peoples
     
-    @task(task_id="transforming")
+    @task(task_id="loading_in_dw")
     def send_data(peoples):
         pg_hook = PostgresHook(postgres_conn_id='postgres')
         connection = pg_hook.get_conn()
@@ -58,4 +58,4 @@ def simple_etl_decorated():
     send_data(transform)
 
 
-simple_dag = simple_etlite()
+simple_dag = simple_etl_decorated()
