@@ -5,7 +5,7 @@ This is simple test work based on Airflow, Postgersql and Docker
 * First clone the repo
  
 ```
-git clone 
+git clone https://github.com/WonderLuc/test-work.git
 cd test-work/
 ```
 * Then use docker compose
@@ -17,4 +17,4 @@ docker-compose up
 > password and login for all services - airflow
 
 
-* Now you can run DAG named simple-etl
+* Now you can run DAGs!
